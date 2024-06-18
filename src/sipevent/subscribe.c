@@ -669,3 +669,21 @@ int sipevent_fork(struct sipsub **subp, struct sipsub *osub,
 
 	return err;
 }
+
+
+bool sipevent_subscribed(const struct sipsub *sub)
+{
+	return sub ? sub->subscribed : false;
+}
+
+
+bool sipevent_failed(const struct sipsub *sub)
+{
+	return sub ? sub->failc > 0 : false;
+}
+
+
+uint32_t sipevent_expires(const struct sipsub *sub)
+{
+	return sub ? sub->expires : false;
+}

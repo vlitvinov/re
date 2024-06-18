@@ -121,3 +121,9 @@ int sipevent_fork(struct sipsub **subp, struct sipsub *osub,
 		  sip_auth_h *authh, void *aarg, bool aref,
 		  sipsub_notify_h *notifyh, sipsub_close_h *closeh,
 		  void *arg);
+
+bool sipevent_subscribed(const struct sipsub *sub);
+
+bool sipevent_failed(const struct sipsub *sub);
+
+uint32_t sipevent_expires(const struct sipsub *sub);
